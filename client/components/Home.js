@@ -1,32 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import SearchForm from './artists/searchForm';
 
 class Home extends Component {
     constructor(props) {
         super(props);
     }
 
-
-
-
-
-
-
     render() {
 
 
+        return (<div >
+
+            <SearchForm />
 
 
-        return (
-            <h1>test</h1>
+
+        </div>
         )
     }
 }
 
 function mapStateToProps(state) {
     return {
-        
+
     };
 }
 
