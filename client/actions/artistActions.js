@@ -22,6 +22,12 @@ class ArtistActions {
         }
     }
 
+    static loading(boolean) {
+        return {
+            type: Constants.LOADING,
+            boolean
+        }
+    }
 
     // ===================================================================== //
     // ========================== API: ASYNC CALLS ========================= //
@@ -29,13 +35,15 @@ class ArtistActions {
 
     static searchArtistAsync(searchText) {
         return (dispatch) => {
-            axios.get(`${base}?term=` + searchText)
+            axios.get(`${base}?term=` + searchText + "&media=music")
                 .then((response) => {
+                    dispatch(ArtistActions.loading(true));
                     dispatch(ArtistActions.loadArtistResults(response.data.results))
                 })
                 .catch((error) => {
                     console.log(error)
                     dispatch(addNotification({ title: 'Error', message: 'Error loading data from API: ' + error, level: 'error' }));
+                    dispatch(ArtistActions.loading(true));
                 })
         }
     }

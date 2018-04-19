@@ -5,7 +5,7 @@ import AppContainer from './components/AppContainer';
 import Home from './components/Home';
 
 export default (
-    <Route path="/musicproject" component={AppContainer}>
+    <Route path="/" component={AppContainer}>
         <IndexRoute component={Home} />
         
     </Route>

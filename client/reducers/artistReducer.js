@@ -5,6 +5,7 @@ import Constants from '../constants';
 const artistInitialState = {
     artists: Immutable.fromJS({
         search: '',
+        loaded: true,
         results: []
     })
 };
@@ -18,6 +19,10 @@ function artistReducer(state = artistInitialState.artists, action) {
 
         case Constants.LOAD_RESULTS:
         state = state.updateIn(['results'], (data) => data = Immutable.fromJS(action.results));
+        return state;
+
+        case Constants.LOADING:
+        state = state.set('loaded', action.boolean);
         return state;
 
         default:

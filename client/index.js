@@ -1,7 +1,9 @@
 /* eslint-disable import/default */
 import 'babel-polyfill';
+
 import React from 'react';
 import { render } from 'react-dom';
+
 
 // import react router deps
 import { Router } from 'react-router';
