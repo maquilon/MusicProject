@@ -1,7 +1,7 @@
 {
-  "name": "coursesmanager",
+  "name": "MusicProject",
   "version": "1.0.0",
-  "description": "",
+  "description": "Code Challenge",
   "main": "webpack.config.dev.js",
   "scripts": {
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
@@ -9,7 +9,7 @@
     "clean": "rimraf build",
     "start": "node devServer.js"
   },
-  "author": "FV",
+  "author": "Humberto Maquilon",
   "license": "ISC",
   "devDependencies": {
     "axios": "^0.15.3",

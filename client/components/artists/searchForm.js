@@ -7,16 +7,20 @@ class SearchForm extends Component {
         super(props);
     }
 
+    dispatchSearch() {
+        this.props.dispatch(ArtistActions.loading(false));
+        this.props.dispatch(ArtistActions.searchArtistAsync(this.props.artist.get('search')));
+    }
+
     handleKeyDown(event) {
         if (event.keyCode === 13) {
             event.preventDefault(); 
-            this.props.dispatch(ArtistActions.loading(false));
-            this.props.dispatch(ArtistActions.searchArtistAsync(this.props.artist.get('search')));
+            this.dispatchSearch();
         }
     }
 
     handleOnClick() {
-
+        this.dispatchSearch();
     }
 
     render() {
@@ -33,12 +37,12 @@ class SearchForm extends Component {
                         value={this.props.artist.get('search')}
                         onKeyDown={(e) => this.handleKeyDown(e)}
                     />
+
                     <button
                         className="btn btn-secondary ml-3 my-sm-0"
                         type="button"
-                        onClick={() => this.props.dispatch(ArtistActions.searchArtistAsync(this.props.artist.get('search')))}
-                    >
-                        Search
+                        onClick={() => this.handleOnClick()}
+                    > Search
                     </button>
                 </form>
             </div>

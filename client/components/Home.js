@@ -10,6 +10,10 @@ class Home extends Component {
     }
 
     render() {
+        {/* 
+            Main loop to display the 
+            results of the search
+        */}
         let results = (this.props.results || []).map((data, i) => {
             // Using Date JavaScript Functions
             let d = new Date(data.get('releaseDate'));
@@ -22,7 +26,7 @@ class Home extends Component {
                             <div className="row">
                                 <div className="col-md-9 text"> <h3 className="card-title"> {data.get('artistName')} </h3></div>
 
-                                <div className="col-md-3" style={{ textAlign: 'right'}}><span className="badge badge-primary" >{data.get('primaryGenreName')}</span></div>
+                                <div className="col-md-3" style={{ textAlign: 'right' }}><span className="badge badge-primary" >{data.get('primaryGenreName')}</span></div>
                             </div>
                         </div>
                         <div className="card-body">
@@ -47,13 +51,11 @@ class Home extends Component {
             </div>
         });
 
-
-        return (
+        return (          
             <div className="row" >
                 <SearchForm />
                 {results}
             </div>
-
         )
     }
 }

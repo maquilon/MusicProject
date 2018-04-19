@@ -9,7 +9,6 @@ import Loader from 'react-loader';
 class Main extends Component {
 
     render() {
-
         let loaderOptions = {
             lines: 13,
             length: 10,

@@ -7,6 +7,5 @@ import Home from './components/Home';
 export default (
     <Route path="/" component={AppContainer}>
         <IndexRoute component={Home} />
-        
     </Route>
 );

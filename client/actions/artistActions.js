@@ -2,11 +2,11 @@ import axios from 'axios';
 import Constants from '../constants/';
 import { addNotification } from '../actions/notificationActions';
 import { browserHistory, Link } from 'react-router';
+import { artistReducer } from '../reducers/artistReducer';
 
 const base = 'https://itunes.apple.com/search/';
 
 class ArtistActions {
-
     static updateSearch(property, value) {
         return {
             type: Constants.UPDATE_SEARCH,
@@ -39,6 +39,7 @@ class ArtistActions {
                 .then((response) => {
                     dispatch(ArtistActions.loading(true));
                     dispatch(ArtistActions.loadArtistResults(response.data.results))
+                    dispatch(ArtistActions.updateSearch('search',''))
                 })
                 .catch((error) => {
                     console.log(error)
@@ -47,8 +48,6 @@ class ArtistActions {
                 })
         }
     }
-
-
 }
 
 export default ArtistActions;
