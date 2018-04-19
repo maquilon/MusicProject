@@ -1,1 +1,3 @@
 # MusicProject
+
+React/Redux
