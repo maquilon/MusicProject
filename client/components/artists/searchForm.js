@@ -9,7 +9,7 @@ class SearchForm extends Component {
 
     render() {
         return (
-            <div style={{ marginTop: 30 }}>
+            <div className="row col-lg-12" style={{ marginTop: 30 }}>
                 <form className="form-inline my-4 my-lg-0" >
                     <input 
                         className="form-control mr-sm-3" 
@@ -23,6 +23,7 @@ class SearchForm extends Component {
                     <button
                         className="btn btn-secondary my-2 my-sm-0"
                         type="button"
+                        onClick = {() => this.props.dispatch(ArtistActions.searchArtistAsync(this.props.artist.get('search')))}
                     >
                     Search
                     </button>

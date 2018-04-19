@@ -4,7 +4,8 @@ import keyMirror from '../../node_modules/fbjs/lib/keyMirror';
         //notification system actions
         ADD_NOTIFICATION: null, 
         
-        UPDATE_SEARCH: null
+        UPDATE_SEARCH: null,
+        LOAD_RESULTS: null
 };
 
 export default keyMirror(constants);
