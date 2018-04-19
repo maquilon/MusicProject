@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="navbar-inverse navbar-fixed-bottom">
             <div className="container">
                 <p style={{ color: '#ffffff', font: 'Open Sans, Helvetica Neue', fontSize: '12px', padding: '10px 10px 15px 0px' }}>
-                    {currentDate} - Music Project. All rights Reserved
+                    {currentDate} - Music Project - SharpSpring. All rights Reserved
                 </p>
             </div>
         </div>

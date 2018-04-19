@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import EmployeeActions from '../actions/employeeActions';
 
 
 class Home extends Component {
     constructor(props) {
         super(props);
-
     }
 
-    componentWillMount() {
-       
-    }
+
+
 
 
 
 
     render() {
 
-        }
 
+
+
+        return (
+            <h1>test</h1>
+        )
+    }
 }
 
 function mapStateToProps(state) {
